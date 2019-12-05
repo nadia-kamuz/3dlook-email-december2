@@ -1,0 +1,26 @@
+.content {
+    .main-content {
+        h2 {
+            font-size: 22px;
+            line-height: 25px;
+
+            img {
+                vertical-align: bottom;
+            }
+        }
+
+        p {
+            img {
+                display: inline-block;
+                vertical-align: bottom;
+            }
+        }
+    }
+
+
+    .hidden-mobile {
+        table {
+            margin-bottom: 30px;
+        }
+    }
+}

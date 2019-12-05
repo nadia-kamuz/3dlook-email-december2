@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>3DLOOK</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap" rel="stylesheet">
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Roboto:400,700&display=swap");
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #ffffff;
+  font-family: "Roboto", Arial, sans-serif;
+}
+body p,
+body a,
+body td {
+  font-family: "Roboto", Arial, sans-serif;
+}
+body a {
+  text-decoration: none;
+}
+body .container {
+  width: 100%;
+}
+body .pl-20 {
+  padding-left: 20px;
+}
+body .pre-text {
+  display: none !important;
+  visibility: hidden;
+  mso-hide: all;
+  font-size: 1px;
+  color: #ffffff;
+  line-height: 1px;
+  max-height: 0px;
+  max-width: 0px;
+  opacity: 0;
+  overflow: hidden;
+}
+
+table {
+  margin: 0 auto;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+table.hidden-mobile {
+  display: table;
+}
+table.hidden-desktop {
+  display: none;
+}
+table thead {
+  width: 100%;
+}
+table tr.hidden-mobile {
+  display: table-row;
+}
+table tr.hidden-desktop {
+  display: none;
+}
+table tr td {
+  position: relative;
+  z-index: 3;
+  padding: 0;
+  margin: 0;
+}
+table tr td.hidden-mobile {
+  display: table-cell;
+}
+table tr td.hidden-desktop {
+  display: none;
+}
+
+h2 {
+  color: #282828;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.55px;
+  line-height: 25px;
+  margin: 0;
+}
+
+h3 {
+  font-size: 14px;
+  margin: 0;
+  font-weight: 700;
+  line-height: 20px;
+  margin-bottom: 14px;
+}
+
+p {
+  color: #282828;
+  font-size: 14px;
+  line-height: 23px;
+  margin-top: 0;
+  margin-bottom: 39px;
+}
+
+a {
+  color: #282828;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+ul li {
+  display: inline-block;
+}
+ul li a {
+  text-decoration: none;
+}
+
+.hide-header {
+  display: none;
+}
+
+.header .header-table {
+  width: 600px;
+  height: 18px;
+  table-layout: fixed;
+  margin-bottom: 58px;
+  margin-top: 38px;
+}
+.header .header-table .header-logo-container {
+  margin: 0 auto;
+  display: block;
+}
+.header .header-table .header-logo-container .header-logo {
+  position: relative;
+  width: 119px;
+  height: 18px;
+}
+
+.content .main-content h2 {
+  font-size: 22px;
+  line-height: 25px;
+}
+.content .main-content h2 img {
+  vertical-align: bottom;
+}
+.content .main-content p img {
+  display: inline-block;
+  vertical-align: bottom;
+}
+.content .hidden-mobile table {
+  margin-bottom: 30px;
+}
+
+.contact .social-icons td {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  margin-right: 10px;
+}
+.contact .social-icons td:last-child {
+  margin-right: 0;
+}
+.contact .social-icons td a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background-color: #C8CCD3;
+  line-height: 30px;
+  text-align: center;
+}
+.contact .social-icons td a:hover {
+  background-color: #2ea4dd !important;
+}
+.contact .social-icons td a.instagram {
+  line-height: 32px;
+}
+.contact .social-icons td a.facebook {
+  line-height: 34px;
+}
+.contact .social-icons td a.facebook img {
+  width: 9px;
+}
+.contact .social-icons td a img {
+  width: 17px;
+}
+.contact .hidden-mobile {
+  margin-top: 50px;
+}
+.contact .hidden-mobile .avatar {
+  display: inline-block;
+  width: 310px;
+}
+.contact .hidden-mobile .avatar p {
+  text-align: left;
+  font-size: 14px;
+  line-height: 23px;
+  color: #282828;
+  padding-bottom: 0 !important;
+}
+.contact .hidden-mobile .icons {
+  display: inline-block;
+}
+.contact .hidden-mobile .icons table {
+  width: 100%;
+  table-layout: auto;
+  margin-bottom: 70px !important;
+}
+.contact .hidden-mobile .icons .address span {
+  display: inline-block;
+  font-size: 12px;
+  line-height: 14px;
+  color: #9CA4b1;
+  margin-top: 12px;
+  text-align: left;
+}
+.contact .hidden-mobile .icons .address.second span {
+  margin-top: 0;
+}
+
+.social table {
+  width: 600px;
+}
+.social table #follow-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    color: #1D252D;
+  }
+  .top-block {
+    padding-right: 20px !important;
+  }
+  .hidden-mobile {
+    display: none !important;
+  }
+
+  .contact > td,
+.hello > td {
+    padding: 0 20px !important;
+  }
+
+  .social-icons td {
+    display: inline-block;
+    width: 100%;
+    height: 40px;
+  }
+  .social-icons td a {
+    text-align: center;
+    line-height: 45px;
+  }
+  .social-icons td a img {
+    display: inline-block;
+    max-width: 22px;
+  }
+
+  table {
+    width: 100% !important;
+  }
+  table.hidden-desktop {
+    display: table !important;
+  }
+  table.hidden-mobile {
+    display: none;
+  }
+  table tr.hidden-desktop {
+    display: table-row !important;
+  }
+  table tr.hidden-mobile {
+    display: none;
+  }
+  table tr td.hidden-desktop {
+    display: table-cell !important;
+  }
+  table tr td.hidden-mobile {
+    display: none;
+  }
+
+  .article.hidden-desktop span a {
+    position: absolute;
+    bottom: -27px;
+    left: 50%;
+    width: 189px !important;
+    margin-left: -94px;
+  }
+  .article > td {
+    padding: 20px !important;
+  }
+
+  .articles > td {
+    padding: 20px !important;
+  }
+  .articles .pl-20 {
+    padding: 20px !important;
+  }
+  .articles img {
+    min-width: 100%;
+  }
+
+  .social .hidden-desktop {
+    text-align: center;
+  }
+
+  .contact {
+    text-align: center;
+  }
+  .contact .hidden-desktop .avatar {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    margin-top: 30px;
+  }
+  .contact .hidden-desktop .avatar p {
+    margin-bottom: 0 !important;
+  }
+  .contact .social-icons td {
+    margin: 30px 15px 20px 0 !important;
+    width: 40px !important;
+    height: 40px !important;
+  }
+  .contact .social-icons td a {
+    line-height: 56px !important;
+  }
+  .contact .social-icons td a img {
+    max-width: 32px !important;
+    width: 32px !important;
+  }
+  .contact .social-icons td .instagram {
+    line-height: 62px !important;
+  }
+  .contact .social-icons td .facebook {
+    line-height: 62px !important;
+  }
+  .contact .social-icons td .facebook img {
+    width: 15px !important;
+  }
+  .contact .address {
+    font-size: 12px;
+    line-height: 20px;
+    margin-right: 10px;
+    color: #9ca4b1;
+  }
+  .contact .address.second {
+    font-size: 12px;
+    line-height: 20px;
+    color: #9ca4b1;
+    margin-bottom: 44px !important;
+  }
+
+  .content .hidden-desktop.article table tr:nth-child(2) td {
+    height: 113px !important;
+  }
+
+}
+@media screen and (max-width: 500px) {
+  table {
+    width: 100%;
+  }
+
+  .header .header-table .header-logo-container .header-logo {
+    width: 119px !important;
+    height: 18px !important;
+  }
+}
+@media screen and (max-width: 375px) {
+  .social.social1 > td {
+    padding: 0 20px !important;
+  }
+
+  .social.social2 > td {
+    padding: 0 !important;
+  }
+
+  .social table #follow-mobile {
+    display: table-cell !important;
+  }
+  .social table #follow-mobile img {
+    display: block;
+    margin: 0 auto;
+  }
+  .social table #follow-desktop {
+    display: none !important;
+  }
+
+  
+}
+    </style>
+</head>
+<body style='margin:0;padding:0;background-color:#fff;font-family:"Roboto", Arial, sans-serif;'>
+    <div class="pre-text" style="visibility: hidden;mso-hide: all;font-size: 1px;color: #ffffff;line-height: 1px;max-height: 0px;max-width: 0px;opacity: 0;overflow: hidden;display: none !important;">Hi {{Name}}! Here is your access to the 3DLOOK App. Enjoy!&zwnj;&nbsp;&zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp;&zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp;&zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp;&zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp;&zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp;&zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp;&zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp; &zwnj;&nbsp;</div>
+    <table class="container" style="margin: 0 auto;border-collapse: collapse;border-spacing: 0;width: 600px; background-color: #FFFFFF;">
+        <tr>
+          <td>
+            <table border="0" cellpadding="0" cellspacing="0" width="600" align="center" class="top" style="margin:0 auto;border-collapse:collapse;border-spacing:0;">
+              <tr>
+                <td class="top-block" style='font-family:"Roboto", Arial, sans-serif;position:relative;z-index:3;padding:0;margin:0; padding-top: 45px; padding-bottom: 10px; text-align: right; width: 100%;'>
+                  <a href="{{WebLetterUrl}}" style='color:rgba(40, 40, 40, 0.7);font-family:"Roboto", Arial, sans-serif;text-decoration:none;text-decoration: underline; font-size: 12px; line-height: 14px; font-weight: 400; text-align: right;'>Web version</a>
+                </td>
+              </tr>
+            </table>
+          </td>
+        </tr>
+        <tr class="header">
+            <td style="font-family: &quot;Roboto&quot;, Arial, sans-serif;position: relative;z-index: 3;padding: 0;margin: 0;">
+                <table border="0" cellpadding="0" cellspacing="0" width="600" align="center" class="header-table" style="margin: 0 auto;border-collapse: collapse;border-spacing: 0;width: 600px;height: 18px;table-layout: fixed;margin-bottom: 58px;margin-top: 38px;">
+                    <tr>
+                        <td class="header-logo-container" width="119" style="font-family: &quot;Roboto&quot;, Arial, sans-serif;position: relative;z-index: 3;padding: 0;margin: 0 auto;display: block;">
+                            <a href="https://3dlook.me/?utm_source=newsletter&utm_medium=email&utm_campaign=app_access_automated_email" target="_blank" style="color: #282828;font-family: &quot;Roboto&quot;, Arial, sans-serif;text-decoration: none;">
+                                <img class="header-logo" src="https://nadia-kamuz.github.io/3dlook-email-december/img/logo_3dlook_horizontal_white.png" alt="header-logo" style="position: relative;width: 119px;height: 18px;">
+                            </a>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr class="content">
+            <td style="font-family: &quot;Roboto&quot;, Arial, sans-serif;position: relative;z-index: 3;padding: 0;margin: 0;">
+                <table width="480" align="center" class="main-content" style="margin: 0 auto;border-collapse: collapse;border-spacing: 0;">
+                    <tr class="hello">
+                        <td style="font-family: &quot;Roboto&quot;, Arial, sans-serif;position: relative;z-index: 3;padding: 0;margin: 0;">
+                            <h2 style="color: #282828;font-size: 22px;font-weight: 700;letter-spacing: 0.55px;line-height: 25px;margin: 0;">Hi {{Name}},</h2>
+                            <p style="color: #282828;font-size: 14px;line-height: 23px;margin-top: 0;margin-bottom: 39px;font-family: &quot;Roboto&quot;, Arial, sans-serif;">Here is your access to the 3DLOOK App. Enjoy!</p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr class="social social1">
+            <td style="font-family: &quot;Roboto&quot;, Arial, sans-serif;position: relative;z-index: 3;padding: 0;margin: 0;">
+                <table width="600" align="center" border="0" cellpadding="0" cellspacing="0" style="margin: 0 auto;border-collapse: collapse;border-spacing: 0;width: 600px;">
+                    <tr>
+                        <td id="follow-desktop" style="width: 600px;height: 180px;font-family: &quot;Roboto&quot;, Arial, sans-serif;position: relative;z-index: 3;padding: 0;margin: 0;">
+                            <img src="https://nadia-kamuz.github.io/3dlook-email-december/img/app.png" usemap="#image-map" style="width: 100%; display: block;">
+                            <map name="image-map">
+                                <area target="_blank" alt="app-store" title="app-store" href="https://apps.apple.com/us/app/3dlook/id1297969065" coords="203,61,401,120" shape="rect" style="outline: none;">
+                            </area></map>
+                        </td>
+                        <td id="follow-mobile" style="font-family: &quot;Roboto&quot;, Arial, sans-serif;position: relative;z-index: 3;padding: 0;margin: 0;display: none;">
+                            <img src="https://nadia-kamuz.github.io/3dlook-email-december/img/app-small.png" usemap="#image-map">
+                            <map name="image-map">
+                                <area target="_blank" alt="" title="" href="https://apps.apple.com/us/app/3dlook/id1297969065" coords="116,119,314,60" shape="rect">
+                            </area></map>
+                            <p style="text-align: center;font-size: 14px;line-height: 23px;font-weight: 400;margin-bottom: 0 !important;color: #282828;margin-top: 0;font-family: &quot;Roboto&quot;, Arial, sans-serif;">Our <span style=" color: #2ea4dd; font-weight: bold;">Android App</span> is coming soon. <br> We’ll let you know when it’s live!</p>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr class="social">
+            <td style="font-family: &quot;Roboto&quot;, Arial, sans-serif;position: relative;z-index: 3;padding: 0;margin: 0;">
+                <table width="600" align="center" border="0" cellpadding="0" cellspacing="0" style="margin: 0 auto;border-collapse: collapse;border-spacing: 0;width: 600px;">
+                    <tr>
+                        <td valign="top" id="follow-desktop" width="196" ; style="font-family: &quot;Roboto&quot;, Arial, sans-serif;position: relative;z-index: 3;padding: 0;margin: 0;">
+                            <img src="https://nadia-kamuz.github.io/3dlook-email-december/img/leg.png" usemap="#image-map" style="width: 100%; display: block;">
+                        </td>
+                        <td valign="top" id="follow-desktop" style="font-family: &quot;Roboto&quot;, Arial, sans-serif;position: relative;z-index: 3;padding: 0;margin: 0;">
+                            <p style="font-size: 14px;line-height: 23px;font-weight: 400;margin-bottom: 0 !important;color: #282828;text-align: center;margin-top: 0;font-family: &quot;Roboto&quot;, Arial, sans-serif;">Our <span style=" color: #2ea4dd; font-weight: bold;">Android App</span> is coming soon.<br> We’ll let you know when it’s live!</p>
+                        </td>
+                        <td valign="top" id="follow-desktop" width="196" style="font-family: &quot;Roboto&quot;, Arial, sans-serif;position: relative;z-index: 3;padding: 0;margin: 0;">
+                            <img src="https://nadia-kamuz.github.io/3dlook-email-december/img/leg2.png" usemap="#image-map" style="width: 100%; display: block;">
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr class="social social2">
+            <td style="font-family: &quot;Roboto&quot;, Arial, sans-serif;position: relative;z-index: 3;padding: 0;margin: 0;ß">
+                <table width="600" align="center" border="0" cellpadding="0" cellspacing="0" style="margin: 0 auto;border-collapse: collapse;border-spacing: 0;width: 600px;">
+                    <tr>
+                        <td id="follow-desktop" style="padding-top: 66px;font-family: &quot;Roboto&quot;, Arial, sans-serif;position: relative;z-index: 3;margin: 0;">
+                          <a href="#follow-desktop"><img src="https://nadia-kamuz.github.io/3dlook-email-december/img/social-desktop-small.png" usemap="#follow-d"></a>
+                        </td>
+                        <td id="follow-mobile" style="padding-top: 36px;font-family: &quot;Roboto&quot;, Arial, sans-serif;position: relative;z-index: 3;margin: 0;display: none;">
+                            <img src="https://nadia-kamuz.github.io/3dlook-email-december/img/social-mobile-small.png" usemap="#follow-m" style="width: 100%;">
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+        <tr class="contact">
+            <td style="font-family: &quot;Roboto&quot;, Arial, sans-serif;position: relative;z-index: 3;padding: 0;margin: 0;">
+                <table width="480" class="hidden-mobile" style="margin: 0 auto;border-collapse: collapse;border-spacing: 0;display: table;margin-top: 50px;">
+                    <tr>
+                        <td class="avatar" valign="top" style="font-family: &quot;Roboto&quot;, Arial, sans-serif;position: relative;z-index: 3;padding: 0;margin: 0;display: inline-block;width: 310px;">
+                            <p style="color: #282828;font-size: 14px;line-height: 23px;margin-top: 0;margin-bottom: 39px;font-family: &quot;Roboto&quot;, Arial, sans-serif;text-align: left;padding-bottom: 0 !important;">Have feedback on the app?<br>Let us know at: <a href="mailto:hello@3dlook.me" target="_blank" style="text-decoration: underline;color: #2ea4dd;font-weight: bold;font-family: &quot;Roboto&quot;, Arial, sans-serif;">hello@3dlook.me</a></p>
+                        </td>
+                        <td style="font-family: &quot;Roboto&quot;, Arial, sans-serif;position: relative;z-index: 3;padding: 0;margin: 0;">
+                        </td>
+                        <td class="icons" width="165" valign="top" style="font-family: &quot;Roboto&quot;, Arial, sans-serif;position: relative;z-index: 3;padding: 0;margin: 0;display: inline-block;">
+                            <table style="margin: 0 auto;border-collapse: collapse;border-spacing: 0;width: 100%;table-layout: auto;margin-bottom: 70px !important;">
+                                <tr class="social-icons">
+                                    <td style="font-family: &quot;Roboto&quot;, Arial, sans-serif;position: relative;z-index: 3;padding: 0;margin: 0;display: inline-block;width: 25px;height: 25px;margin-right: 10px;">
+                                        <a class="3dlook" href="https://3dlook.me/?utm_source=newsletter&utm_medium=email&utm_campaign=app_access_automated_email" target="_blank" style="color: #282828;font-family: &quot;Roboto&quot;, Arial, sans-serif;text-decoration: none;display: inline-block;width: 100%;height: 100%;background-color: #C8CCD3;line-height: 30px;text-align: center;">
+                                            <img src="https://nadia-kamuz.github.io/3dlook-email-december/img/3dlook.png" alt="3dlook" style="width: 17px;">
+                                        </a>
+                                    </td>
+                                    <td style="font-family: &quot;Roboto&quot;, Arial, sans-serif;position: relative;z-index: 3;padding: 0;margin: 0;display: inline-block;width: 25px;height: 25px;margin-right: 10px;">
+                                        <a class="linkedin" href="https://www.linkedin.com/company/3dlook/" target="_blank" style="color: #282828;font-family: &quot;Roboto&quot;, Arial, sans-serif;text-decoration: none;display: inline-block;width: 100%;height: 100%;background-color: #C8CCD3;line-height: 30px;text-align: center;">
+                                            <img src="https://nadia-kamuz.github.io/3dlook-email-december/img/linkedin.png" alt="linkedin" style="width: 17px;">
+                                        </a>
+                                    </td>
+                                    <td style="font-family: &quot;Roboto&quot;, Arial, sans-serif;position: relative;z-index: 3;padding: 0;margin: 0;display: inline-block;width: 25px;height: 25px;margin-right: 10px;">
+                                        <a class="instagram" href="https://www.instagram.com/3dlook_me/" target="_blank" style="color: #282828;font-family: &quot;Roboto&quot;, Arial, sans-serif;text-decoration: none;display: inline-block;width: 100%;height: 100%;background-color: #C8CCD3;line-height: 32px;text-align: center;">
+                                            <img src="https://nadia-kamuz.github.io/3dlook-email-december/img/instagram.png" alt="instagram" style="width: 17px;">
+                                        </a>
+                                    </td>
+                                    <td style="font-family: &quot;Roboto&quot;, Arial, sans-serif;position: relative;z-index: 3;padding: 0;margin: 0;display: inline-block;width: 25px;height: 25px;margin-right: 10px;">
+                                        <a class="twitter" href="https://twitter.com/3dlook_me" target="_blank" style="color: #282828;font-family: &quot;Roboto&quot;, Arial, sans-serif;text-decoration: none;display: inline-block;width: 100%;height: 100%;background-color: #C8CCD3;line-height: 30px;text-align: center;">
+                                            <img src="https://nadia-kamuz.github.io/3dlook-email-december/img/twitter.png" alt="twitter" style="width: 17px;">
+                                        </a>
+                                    </td>
+                                    <td style="font-family: &quot;Roboto&quot;, Arial, sans-serif;position: relative;z-index: 3;padding: 0;margin: 0;display: inline-block;width: 25px;height: 25px;margin-right: 0;">
+                                        <a class="facebook" href="https://www.facebook.com/3DLOOK.me/" target="_blank" style="color: #282828;font-family: &quot;Roboto&quot;, Arial, sans-serif;text-decoration: none;display: inline-block;width: 100%;height: 100%;background-color: #C8CCD3;line-height: 34px;text-align: center;">
+                                            <img src="https://nadia-kamuz.github.io/3dlook-email-december/img/facebook.png" alt="facebook" style="width: 9px;">
+                                        </a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="address" style="font-family: &quot;Roboto&quot;, Arial, sans-serif;position: relative;z-index: 3;padding: 0;margin: 0;">
+                                        <span style="display: inline-block;font-size: 12px;line-height: 14px;color: #9CA4b1;margin-top: 12px;text-align: left;">
+                                            <nobr>San Mateo, CA 94401</nobr>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="address second" style="font-family: &quot;Roboto&quot;, Arial, sans-serif;position: relative;z-index: 3;padding: 0;margin: 0;">
+                                        <span style="display: inline-block;font-size: 12px;line-height: 14px;color: #9CA4b1;margin-top: 0;text-align: left;">
+                                            <nobr>55 East 3rd Avenue</nobr>
+                                        </span>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+                <table class="hidden-desktop" style="margin: 0 auto;border-collapse: collapse;border-spacing: 0;display: none;">
+                    <tr>
+                        <td class="avatar" style="font-family: &quot;Roboto&quot;, Arial, sans-serif;position: relative;z-index: 3;padding: 0;margin: 0;">
+                            <p style="color: #282828;font-size: 14px;line-height: 23px;margin-top: 0;margin-bottom: 39px;font-family: &quot;Roboto&quot;, Arial, sans-serif;">Have feedback on the app?<br>Let us know at: <a href="mailto:hello@3dlook.me" target="_blank" style="text-decoration: underline;color: #2ea4dd;font-weight: bold;font-family: &quot;Roboto&quot;, Arial, sans-serif;">hello@3dlook.me</a></p>
+                        </td>
+                    </tr>
+                    <tr class="social-icons">
+                        <td style="font-family: &quot;Roboto&quot;, Arial, sans-serif;position: relative;z-index: 3;padding: 0;margin: 0;display: inline-block;width: 25px;height: 25px;margin-right: 10px;">
+                            <a class="3dlook" href="https://3dlook.me/?utm_source=newsletter&utm_medium=email&utm_campaign=app_access_automated_email" target="_blank" style="color: #282828;font-family: &quot;Roboto&quot;, Arial, sans-serif;text-decoration: none;display: inline-block;width: 100%;height: 100%;background-color: #C8CCD3;line-height: 30px;text-align: center;">
+                                <img src="https://nadia-kamuz.github.io/3dlook-email-december/img/3dlook.png" alt="3dlook" style="width: 17px;">
+                            </a>
+                        </td>
+                        <td style="font-family: &quot;Roboto&quot;, Arial, sans-serif;position: relative;z-index: 3;padding: 0;margin: 0;display: inline-block;width: 25px;height: 25px;margin-right: 10px;">
+                            <a class="linkedin" href="https://www.linkedin.com/company/3dlook/" target="_blank" style="color: #282828;font-family: &quot;Roboto&quot;, Arial, sans-serif;text-decoration: none;display: inline-block;width: 100%;height: 100%;background-color: #C8CCD3;line-height: 30px;text-align: center;">
+                                <img src="https://nadia-kamuz.github.io/3dlook-email-december/img/linkedin.png" alt="linkedin" style="width: 17px;">
+                            </a>
+                        </td>
+                        <td style="font-family: &quot;Roboto&quot;, Arial, sans-serif;position: relative;z-index: 3;padding: 0;margin: 0;display: inline-block;width: 25px;height: 25px;margin-right: 10px;">
+                            <a class="instagram" href="https://www.instagram.com/3dlook_me/" target="_blank" style="color: #282828;font-family: &quot;Roboto&quot;, Arial, sans-serif;text-decoration: none;display: inline-block;width: 100%;height: 100%;background-color: #C8CCD3;line-height: 32px;text-align: center;">
+                                <img src="https://nadia-kamuz.github.io/3dlook-email-december/img/instagram.png" alt="instagram" style="width: 17px;">
+                            </a>
+                        </td>
+                        <td style="font-family: &quot;Roboto&quot;, Arial, sans-serif;position: relative;z-index: 3;padding: 0;margin: 0;display: inline-block;width: 25px;height: 25px;margin-right: 10px;">
+                            <a class="twitter" href="https://twitter.com/3dlook_me" target="_blank" style="color: #282828;font-family: &quot;Roboto&quot;, Arial, sans-serif;text-decoration: none;display: inline-block;width: 100%;height: 100%;background-color: #C8CCD3;line-height: 30px;text-align: center;">
+                                <img src="https://nadia-kamuz.github.io/3dlook-email-december/img/twitter.png" alt="twitter" style="width: 17px;">
+                            </a>
+                        </td>
+                        <td style="font-family: &quot;Roboto&quot;, Arial, sans-serif;position: relative;z-index: 3;padding: 0;margin: 0;display: inline-block;width: 25px;height: 25px;margin-right: 0;">
+                            <a class="facebook" href="https://www.facebook.com/3DLOOK.me/" target="_blank" style="color: #282828;font-family: &quot;Roboto&quot;, Arial, sans-serif;text-decoration: none;display: inline-block;width: 100%;height: 100%;background-color: #C8CCD3;line-height: 34px;text-align: center;">
+                                <img src="https://nadia-kamuz.github.io/3dlook-email-december/img/facebook.png" alt="facebook" style="width: 9px;">
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="font-family: &quot;Roboto&quot;, Arial, sans-serif;position: relative;z-index: 3;padding: 0;margin: 0; padding-bottom: 44px; text-align: center; font-size: 12px; color: #9CA4b1;">
+                            <span class="address">San Mateo, CA 94401 <br>55 East 3rd Avenue</span>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
